@@ -1,8 +1,8 @@
 package club.koupah.feather.events;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.player.PlayerEvent;
 
 /**
  * Event that is fired whenever a player logs in with the Feather Client and
@@ -13,20 +13,26 @@ import org.bukkit.event.player.PlayerEvent;
  * @createdAt 9:08:31 pm on 12 Feb 2022
  */
 
-public class FeatherPlayerRegisterEvent extends PlayerEvent {
+public class FeatherPlayerRegisterEvent extends Event {
 
-	private static HandlerList handlerList = new HandlerList();
+	Player player;
 
 	public FeatherPlayerRegisterEvent(Player player) {
-		super(player);
+		this.player = player;
 	}
 
-	public HandlerList getHandlerList() {
-		return handlerList;
+	public Player getPlayer() {
+		return this.player;
 	}
 
-	@Override
+	private static final HandlerList handlers = new HandlerList();
+
 	public HandlerList getHandlers() {
-		return handlerList;
+		return handlers;
 	}
+
+	public static HandlerList getHandlerList() {
+		return handlers;
+	}
+
 }
