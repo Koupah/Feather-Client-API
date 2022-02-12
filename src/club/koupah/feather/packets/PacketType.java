@@ -7,6 +7,10 @@ package club.koupah.feather.packets;
 
 public class PacketType {
 
+	public static enum Clientbound {
+		DISABLE_MODS, SET_WAYPOINTS;
+	}
+
 	public static enum Serverbound {
 		CLIENT_HELLO;
 
