@@ -1,10 +1,10 @@
 package club.koupah.feather.listener;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,11 +15,15 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+
 import club.koupah.feather.FeatherAPI;
 import club.koupah.feather.events.FeatherPlayerRegisterEvent;
 import club.koupah.feather.handler.FeatherHandler;
 import club.koupah.feather.packets.PacketType;
 import club.koupah.feather.packets.impl.FCDisableMods;
+import club.koupah.feather.packets.impl.waypoints.ChromaColor;
+import club.koupah.feather.packets.impl.waypoints.FCSetWaypoints;
+import club.koupah.feather.packets.impl.waypoints.Waypoint;
 
 /**
  * @author Koupah
@@ -40,6 +44,9 @@ public class FeatherClientListener implements Listener, PluginMessageListener {
 				.collect(Collectors.toList());
 
 		FeatherAPI.sendFeatherPacket(event.getPlayer(), new FCDisableMods(disabled));
+
+		//FeatherAPI.sendFeatherPacket(event.getPlayer(), new FCSetWaypoints(
+		//		Arrays.asList(new Waypoint("Spawn", new ChromaColor(true, 0), event.getPlayer().getLocation()))));
 	}
 
 	@EventHandler
