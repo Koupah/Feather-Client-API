@@ -1,0 +1,6 @@
+name: "FeatherAPI"
+version: "1.0"
+author: Koupah
+main: club.koupah.feather.FeatherAPI
+description: Feather Client API
+api: []
