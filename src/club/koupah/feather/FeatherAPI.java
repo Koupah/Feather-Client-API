@@ -44,7 +44,7 @@ public class FeatherAPI extends JavaPlugin {
 	 * @param player The player to check
 	 * @return Whether the player is running Feather Client or not
 	 */
-	public boolean isOnFeather(Player player) {
+	public static boolean isOnFeather(Player player) {
 		return isOnFeather(player.getUniqueId());
 	}
 
@@ -54,8 +54,8 @@ public class FeatherAPI extends JavaPlugin {
 	 * @param player The uuid of the player to check
 	 * @return Whether the player is running Feather Client or not
 	 */
-	public boolean isOnFeather(UUID uuid) {
-		return this.handler.getFeatherPlayers().contains(uuid);
+	public static boolean isOnFeather(UUID uuid) {
+		return getInstance().handler.getFeatherPlayers().contains(uuid);
 	}
 
 	/**
