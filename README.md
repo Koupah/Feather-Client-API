@@ -1,6 +1,9 @@
 # Feather-Client-API
 An API that allows your server to detect &amp; interact with Feather Client
 
+# NOTE
+I actually started writing this before I realised that Feather had already made their own [FeatherServerAPI](https://github.com/FeatherMC/FeatherPlugin).  
+Probably won't continue now that I know one already exists.
 
 ## TODO List
  - Add packets
